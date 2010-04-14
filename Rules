@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. "/about/" for the file
+#   "content/about.html"). To select all children, grandchildren, ... of an
+#   item, use the pattern "/about/*/"; "/about/*" will also select the parent,
+#   because "*" matches zero or more characters.
+
+# CONFIG
+
+static_files_regexp = %r{^/(assets|images|css|js|javascript)/}
+
+# PREPROCESS
+
+# preprocess do
+# end
+
+# COMPILATION
+
+compile '/assets/css/*' do
+  filter :sass
+  rep.filter :relativize_paths, :type => :css 
+end
+
+compile static_files_regexp do
+  # Static content
+end
+
+compile '*' do
+  # Filter depending on extension
+  case item[:extension]
+    when 'erb'
+      filter :erb
+    else
+      filter :haml
+  end
+  # filter :haml
+  layout 'default'
+end
+
+# ROUTING
+
+route '/**/_*' do
+  # Don't render partials
+  nil
+end
+
+route '/assets/css/*' do 
+  # CSS
+  item.identifier.chop + '.css'
+end 
+
+route '/' do
+  # Root index file
+  item.identifier + 'index.html'
+end
+
+route static_files_regexp do
+  # Static content
+  item.identifier[0..-2] + '.' + item[:extension]
+end
+
+route '*' do
+  # # Folder/index.html
+  # item.identifier + 'index.html'
+  
+  # Page.html
+  item.identifier[0..-2] + '.html'
+end
+
+# LAYOUTING
+
+layout '*', :haml

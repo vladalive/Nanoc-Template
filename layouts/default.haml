@@ -1,0 +1,12 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title= "Nanoc Template | #{@item[:title]}"
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}/
+    %link{ :href => "/assets/css/main.css", :rel => "stylesheet", :type => "text/css" }
+  %body
+    .BoxAContainer
+      .BoxAHeader
+      .BoxAMain
+        = yield
+      .BoxAFooter

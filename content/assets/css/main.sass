@@ -1,0 +1,158 @@
+// 
+  @import lib.sass
+
+=Layout_Reset
+  body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, form, fieldset, legend, input, textarea, button, pre, code, blockquote, th, td, hr
+    margin: 0
+    padding: 0
+  
+  h1, h2, h3, h4, h5, h6
+    font-size: 100%
+    font-weight: normal
+  
+  li
+    list-style: none
+  
+  table
+    border-collapse: collapse
+    border-spacing: 0
+  
+  fieldset, img, hr, object
+    border: 0
+  
+  input, textarea, select, button
+    font-family: inherit
+    font-size: inherit
+    font-weight: inherit
+    font-size: 100%
+  
+  legend
+    color: #000
+  
+  address, caption, cite, code, dfn, em, strong, th, var
+    font-style: normal
+    font-weight: normal
+  
+  i, em
+    font-style: italic
+  
+  b, strong
+    font-weight: bold
+  
+  caption, th
+    text-align: left
+  
+  q
+    &:before, &:after
+      content: ''
+  
+  abbr, acronym
+    border: 0
+    font-variant: normal
+  
+  sup
+    vertical-align: text-top
+  
+  sub
+    vertical-align: text-bottom
+  
+  a
+    outline: none
+    cursor: pointer
+  
+  label, button
+    cursor: pointer
+
+
+=Layout_Helpers
+  .FlNone
+    float: none !important
+  
+  .FlLeft
+    float: left !important
+    margin-left: 0px !important
+  
+  .FlRight
+    float: right !important
+    margin-right: 0px !important
+  
+  .ClNone
+    clear: none !important
+  
+  .ClBoth
+    clear: both !important
+  
+  .ClLeft
+    clear: left !important
+  
+  .ClRight
+    clear: right !important
+  
+  .DisNone
+    display: none !important
+  
+  .DisBlock
+    display: block !important
+  
+  .DisInline
+    display: inline !important
+  
+  .Hidden
+    visibility: hidden !important
+  
+  .Visible
+    visibility: visible !important
+  
+  .PosWFull
+    width: 100% !important
+  
+  .PosWHalf
+    width: 50% !important
+  
+  .PosWAuto
+    width: auto !important
+  
+  .PosHAuto
+    height: auto !important
+  
+  div.Clear
+    display: block !important
+    clear: both !important
+    float: none !important
+    width: 100% !important
+    height: 1px !important
+    margin: 0 0 -1px 0 !important
+    font-size: 0px !important
+
+=round-borders(!rad)
+  border-radius = !rad
+  -moz-border-radius = !rad
+  -webkit-border-radius = !rad
+
+=box-shadow(!args)
+  -moz-box-shadow = !args
+  -webkit-box-shadow = !args
+
++Layout_Reset
++Layout_Helpers
+
+
+
+=font_tahoma
+  font-family: Tahoma, sans-serif
+
+body
+  +font_tahoma
+
+.BoxAContainer
+  overflow: hidden
+
+.BoxAHeader
+  overflow: hidden
+
+.BoxAFooter
+  overflow: hidden
+
+.BoxAMain
+  overflow: hidden
+
