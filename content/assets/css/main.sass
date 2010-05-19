@@ -2,6 +2,8 @@
   @import lib.sass
 
 =Layout_Reset
+  /* CSS RESET */
+
   html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, cite, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, textarea, select, button, table, caption, tbody, tfoot, thead, tr, th, td, hr, article, aside, dialog, figure, footer, header, hgroup, nav, section
     margin: 0
     padding: 0
@@ -51,6 +53,8 @@
 
 
 =Layout_Helpers
+  /* CSS Helpers */
+
   div.Clear
     display: block !important
     clear: both !important
@@ -64,22 +68,24 @@
   .Visible
     visibility: visible !important
 
-=round-borders(!args)
-  -moz-border-radius = !args
-  -khtml-border-radius = !args
-  -webkit-border-radius = !args
-  border-radius = !args
+@mixin round-borders($args)
+  -moz-border-radius: $args
+  -khtml-border-radius: $args
+  -webkit-border-radius: $args
+  border-radius: $args
 
-=box-shadow(!args)
-  -moz-box-shadow = !args
-  -webkit-box-shadow = !args
-  box-shadow = !args
-
-
+@mixin box-shadow($args)
+  -moz-box-shadow: $args
+  -webkit-box-shadow: $args
+  box-shadow: $args
 
 =font_tahoma
   font-family: Tahoma, sans-serif
 
+@include Layout_Reset
+@include Layout_Helpers
+
+/* Layout */
 body
   +font_tahoma
 
