@@ -2,119 +2,55 @@
   @import lib.sass
 
 =Layout_Reset
-  body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, form, fieldset, legend, input, textarea, button, pre, code, blockquote, th, td, hr
+  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, cite, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, textarea, select, button, table, caption, tbody, tfoot, thead, tr, th, td, hr, article, aside, dialog, figure, footer, header, hgroup, nav, section
     margin: 0
     padding: 0
-  
-  h1, h2, h3, h4, h5, h6
-    font-size: 100%
-    font-weight: normal
-  
-  li
-    list-style: none
-  
-  table
-    border-collapse: collapse
-    border-spacing: 0
-  
-  fieldset, img, hr, object
-    border: 0
-  
-  input, textarea, select, button
     font-family: inherit
-    font-size: inherit
-    font-weight: inherit
     font-size: 100%
-  
-  legend
-    color: #000
-  
-  address, caption, cite, code, dfn, em, strong, th, var
-    font-style: normal
-    font-weight: normal
-  
-  i, em
-    font-style: italic
-  
-  b, strong
-    font-weight: bold
-  
-  caption, th
+    font-weight: inherit
+    font-style: inherit
+    font-variant: normal
+    vertical-align: baseline
+  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, cite, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, hr, article, aside, dialog, figure, footer, header, hgroup, nav, section
+    border: 0 none
+    outline: 0 none
+    background: none
+  article, aside, dialog, figure, footer, header, hgroup, nav, section
+    display: block
+  table
+    border-collapse: separate
+    border-spacing: 0
+  caption, th, td
     text-align: left
-  
-  q
+    font-weight: normal
+  table, td, th
+    vertical-align: middle
+  ol, ul, li
+    list-style: none
+  blockquote, q
     &:before, &:after
       content: ''
-  
-  abbr, acronym
-    border: 0
-    font-variant: normal
-  
+    quotes: none
+  i, em
+    font-style: italic
+  b, strong
+    font-weight: bold
   sup
     vertical-align: text-top
-  
   sub
     vertical-align: text-bottom
-  
-  a
-    outline: none
+  body
+    cursor: default
+  a, label, button
     cursor: pointer
-  
-  label, button
-    cursor: pointer
+  acronym, abbr
+    cursor: help
+  a, label, button, input, textarea, select
+    &:focus, &:active
+      outline: 0 none
 
 
 =Layout_Helpers
-  .FlNone
-    float: none !important
-  
-  .FlLeft
-    float: left !important
-    margin-left: 0px !important
-  
-  .FlRight
-    float: right !important
-    margin-right: 0px !important
-  
-  .ClNone
-    clear: none !important
-  
-  .ClBoth
-    clear: both !important
-  
-  .ClLeft
-    clear: left !important
-  
-  .ClRight
-    clear: right !important
-  
-  .DisNone
-    display: none !important
-  
-  .DisBlock
-    display: block !important
-  
-  .DisInline
-    display: inline !important
-  
-  .Hidden
-    visibility: hidden !important
-  
-  .Visible
-    visibility: visible !important
-  
-  .PosWFull
-    width: 100% !important
-  
-  .PosWHalf
-    width: 50% !important
-  
-  .PosWAuto
-    width: auto !important
-  
-  .PosHAuto
-    height: auto !important
-  
   div.Clear
     display: block !important
     clear: both !important
@@ -123,18 +59,21 @@
     height: 1px !important
     margin: 0 0 -1px 0 !important
     font-size: 0px !important
+  .Hidden
+    visibility: hidden !important
+  .Visible
+    visibility: visible !important
 
-=round-borders(!rad)
-  border-radius = !rad
-  -moz-border-radius = !rad
-  -webkit-border-radius = !rad
+=round-borders(!args)
+  -moz-border-radius = !args
+  -khtml-border-radius = !args
+  -webkit-border-radius = !args
+  border-radius = !args
 
 =box-shadow(!args)
   -moz-box-shadow = !args
   -webkit-box-shadow = !args
-
-+Layout_Reset
-+Layout_Helpers
+  box-shadow = !args
 
 
 
